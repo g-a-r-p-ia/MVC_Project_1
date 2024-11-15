@@ -1,0 +1,117 @@
+﻿@model WEBCHIK.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: center;
+        color: #495057;
+    }
+
+    h4 {
+        font-size: 1.5em;
+        color: #343a40;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .col-sm-2 {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .col-sm-10 {
+        color: #6c757d;
+    }
+
+    .photo-frame {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .photo-frame img {
+        border-radius: 50%;
+        border: 3px solid #6c757d;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container">
+    <h1>Details</h1>
+    <div>
+
+        <h4>Employee</h4>
+        <hr />
+        <div class="photo-frame">
+            <img src="@Url.Content(Model.Photo.Img)" alt="Employee Photo" />
+        </div>
+
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FirstName)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.LastName)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.LastName)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Position)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Position)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DepartmentId)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.DepartmentId)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.HireDate)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.HireDate)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.SupervisorId)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.SupervisorId)</dd>
+        </dl>
+    </div>
+
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+services:
+  webchik:
+    image: ${DOCKER_REGISTRY-}webchik
+    build:
+      context: .
+      dockerfile: WEBCHIK/Dockerfile
